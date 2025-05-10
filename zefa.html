@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Aniversário, Verônica!</title>
+  <link rel="stylesheet" href="zefa.css">
+</head>
+<body>
+  
+  <section id="tela-inicial" class="tela visivel">
+    <h1 class="animado">Feliz aniversário, Verônica!</h1>
+    <button onclick="iniciarJogo()">Clique aqui para jogar!</button>
+  </section>
+
+  <section id="tela-jogo" class="tela">
+    <div id="tabuleiro" class="tabuleiro"></div>
+  </section>
+
+  <section id="tela-final" class="tela">
+    <div id="presente-container">
+      <img src="imagens/presente-fechado.png" id="presente" alt="Presente" onclick="abrirPresente()">
+    </div>
+    <div id="confetes"></div>
+    <div id="cartao" class="cartao escondido">
+      <h2>Parabéns, Vero Vero!</h2>
+      <p>
+        Que Deus abençoe muito seu novo ciclo, tô muito feliz em ver suas conquistas.<br>
+        Aproveita seu dia com bastante estilo e alegria.<br>
+        <strong>bjs!</strong>
+      </p>
+    </div>
+  </section>
+
+  <script src="zefa.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffe6f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .tela {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .visivel {
+    display: flex;
+  }
+  
+  .animado {
+    font-size: 2.5em;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffb6c1;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ff99aa;
+  }
+  
+  .tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    perspective: 1000px;
+  }
+  
+  .carta {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .carta.virada {
+    transform: rotateY(180deg);
+  }
+  
+  .carta-frente,
+  .carta-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .carta-frente {
+    background-color: #f8a5c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+  }
+  
+  .carta-verso {
+    transform: rotateY(180deg);
+  }
+  
+  .carta-verso img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  #presente {
+    width: 120px;
+    max-width: 30vw;
+    cursor: pointer;
+    animation: flutuar 2s infinite ease-in-out;
+  }
+  
+  @keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  #confetes {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .cartao {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    animation: fadeIn 2s ease;
+    z-index: 11;
+  }
+  
+  .escondido {
+    display: none;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes cair {
+    to {
+      transform: translateY(110vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .animado {
+      font-size: 1.8em;
+    }
+  
+    button {
+      font-size: 1em;
+      padding: 8px 16px;
+    }
+  
+    .tabuleiro {
+      gap: 8px;
+    }
+  
+    .cartao {
+      font-size: 0.95em;
+    }
+  }
+  
